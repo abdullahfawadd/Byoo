@@ -1,0 +1,12 @@
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.webp binary
+*.ttf binary
+*.woff2 binary
+*.pdf binary
+*.docx binary
+*.parquet binary
+*.ubj binary
+*.joblib binary
+data/**/*.csv text eol=lf

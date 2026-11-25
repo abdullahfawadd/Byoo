@@ -1,0 +1,1298 @@
+{
+  "modelVersion": "xgb-isb-v1",
+  "datasetVersion": "isb-pools-synthetic-v1",
+  "seed": 42,
+  "trainedAt": "2026-11-23T18:16:30.788555+00:00",
+  "servingModel": "xgboost",
+  "trainingData": "independent synthetic Islamabad pools",
+  "features": [
+    "currentRadiusKm",
+    "currentQuantity",
+    "targetMoq",
+    "participantCount",
+    "joinVelocity",
+    "recentJoinVelocity",
+    "competingActivePools",
+    "elapsedHours",
+    "remainingHours",
+    "radiusExpansionsCount",
+    "weekday",
+    "hourOfDay",
+    "sectorDensity",
+    "productDemand",
+    "fillRatio",
+    "averagePledge",
+    "weekend",
+    "evening",
+    "lifecycleFraction",
+    "sector_G-9",
+    "sector_G-10",
+    "sector_G-11",
+    "sector_F-10",
+    "sector_I-8",
+    "sector_F-7",
+    "sector_F-8",
+    "sector_E-11",
+    "sector_BLUE_AREA",
+    "sku_RICE-5KG",
+    "sku_ATTA-10KG",
+    "sku_OIL-5L",
+    "sku_TEA-900G",
+    "sku_GHEE-5KG",
+    "sku_DAAL-5KG"
+  ],
+  "splitSizes": {
+    "train": 10000,
+    "validation": 2000,
+    "test": 2000
+  },
+  "splits": {
+    "train": {
+      "rows": 10000,
+      "positive": 3425,
+      "negative": 6575,
+      "firstObservation": "2024-01-08T00:00:15+05:00",
+      "lastObservation": "2024-08-04T23:47:41+05:00",
+      "lastOutcome": "2024-08-07T21:03:16+05:00"
+    },
+    "validation": {
+      "rows": 2000,
+      "positive": 703,
+      "negative": 1297,
+      "firstObservation": "2024-08-12T00:49:40+05:00",
+      "lastObservation": "2024-09-22T23:59:34+05:00",
+      "lastOutcome": "2024-09-25T06:43:04+05:00"
+    },
+    "test": {
+      "rows": 2000,
+      "positive": 708,
+      "negative": 1292,
+      "firstObservation": "2024-10-01T00:06:56+05:00",
+      "lastObservation": "2024-11-11T23:52:50+05:00",
+      "lastOutcome": "2024-11-14T13:59:56+05:00"
+    }
+  },
+  "models": {
+    "logistic": {
+      "selectedParameters": {
+        "C": 10.0
+      },
+      "validationTrials": [
+        {
+          "parameters": {
+            "C": 0.1
+          },
+          "validationRocAuc": 0.9098532448773897
+        },
+        {
+          "parameters": {
+            "C": 1.0
+          },
+          "validationRocAuc": 0.9109697288084659
+        },
+        {
+          "parameters": {
+            "C": 10.0
+          },
+          "validationRocAuc": 0.9109839864618097
+        }
+      ],
+      "classificationThreshold": 0.3126050992890681,
+      "validation": {
+        "rocAuc": 0.9109839864618097,
+        "prAuc": 0.8538553082144629,
+        "accuracy": 0.8205,
+        "precision": 0.7042755344418052,
+        "recall": 0.8435277382645804,
+        "f1": 0.7676375404530744,
+        "confusionMatrix": [
+          [
+            1048,
+            249
+          ],
+          [
+            110,
+            593
+          ]
+        ],
+        "brierScore": 0.1157389706204124,
+        "calibration": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "count": 740,
+            "meanProbability": 0.02412072989062158,
+            "observedPositiveRate": 0.02702702702702703
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "count": 229,
+            "meanProbability": 0.1507578894082123,
+            "observedPositiveRate": 0.16593886462882096
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "count": 176,
+            "meanProbability": 0.24710277667367803,
+            "observedPositiveRate": 0.2840909090909091
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "count": 128,
+            "meanProbability": 0.35224126244430254,
+            "observedPositiveRate": 0.40625
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "count": 119,
+            "meanProbability": 0.4539339442422069,
+            "observedPositiveRate": 0.47058823529411764
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "count": 114,
+            "meanProbability": 0.5517585817161393,
+            "observedPositiveRate": 0.6052631578947368
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "count": 99,
+            "meanProbability": 0.6496234180687307,
+            "observedPositiveRate": 0.6666666666666666
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "count": 88,
+            "meanProbability": 0.7488920497817422,
+            "observedPositiveRate": 0.7727272727272727
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "count": 93,
+            "meanProbability": 0.8513395749348434,
+            "observedPositiveRate": 0.8279569892473119
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "count": 214,
+            "meanProbability": 0.9657604913908301,
+            "observedPositiveRate": 0.9672897196261683
+          }
+        ],
+        "expectedCalibrationError": 0.016709065890132,
+        "n": 2000
+      },
+      "featureImportance": [
+        {
+          "feature": "lifecycleFraction",
+          "weight": 0.29382026789252413
+        },
+        {
+          "feature": "fillRatio",
+          "weight": 0.26954985177604013
+        },
+        {
+          "feature": "participantCount",
+          "weight": 0.10185280053729638
+        },
+        {
+          "feature": "remainingHours",
+          "weight": 0.09567262193288296
+        },
+        {
+          "feature": "recentJoinVelocity",
+          "weight": 0.022443166622744967
+        },
+        {
+          "feature": "competingActivePools",
+          "weight": 0.019858514441277057
+        },
+        {
+          "feature": "currentQuantity",
+          "weight": 0.019705238419675287
+        },
+        {
+          "feature": "sku_RICE-5KG",
+          "weight": 0.01822279177126377
+        },
+        {
+          "feature": "weekday",
+          "weight": 0.01712828856150879
+        },
+        {
+          "feature": "sectorDensity",
+          "weight": 0.014035057525479618
+        },
+        {
+          "feature": "targetMoq",
+          "weight": 0.013843260561810525
+        },
+        {
+          "feature": "weekend",
+          "weight": 0.012595534410942723
+        },
+        {
+          "feature": "sector_BLUE_AREA",
+          "weight": 0.01091130766452646
+        },
+        {
+          "feature": "sku_TEA-900G",
+          "weight": 0.010661370906507359
+        },
+        {
+          "feature": "elapsedHours",
+          "weight": 0.009961750112199779
+        },
+        {
+          "feature": "sector_G-9",
+          "weight": 0.00940419114701955
+        },
+        {
+          "feature": "currentRadiusKm",
+          "weight": 0.009369792522141079
+        },
+        {
+          "feature": "radiusExpansionsCount",
+          "weight": 0.009032418763134046
+        },
+        {
+          "feature": "sku_ATTA-10KG",
+          "weight": 0.008726172418131622
+        },
+        {
+          "feature": "sector_E-11",
+          "weight": 0.00508631151257885
+        },
+        {
+          "feature": "hourOfDay",
+          "weight": 0.004543899540233985
+        },
+        {
+          "feature": "evening",
+          "weight": 0.004371526842468885
+        },
+        {
+          "feature": "sector_F-8",
+          "weight": 0.003753998601390601
+        },
+        {
+          "feature": "sector_G-11",
+          "weight": 0.003432296775703932
+        },
+        {
+          "feature": "sku_GHEE-5KG",
+          "weight": 0.002398896503169115
+        },
+        {
+          "feature": "productDemand",
+          "weight": 0.0021843990998530564
+        },
+        {
+          "feature": "sku_DAAL-5KG",
+          "weight": 0.0019651287546809813
+        },
+        {
+          "feature": "sector_G-10",
+          "weight": 0.0018653664480786556
+        },
+        {
+          "feature": "joinVelocity",
+          "weight": 0.0010064366715881099
+        },
+        {
+          "feature": "averagePledge",
+          "weight": 0.0009418209925866088
+        },
+        {
+          "feature": "sector_F-7",
+          "weight": 0.0005804899836399021
+        },
+        {
+          "feature": "sector_F-10",
+          "weight": 0.0005724403243559286
+        },
+        {
+          "feature": "sector_I-8",
+          "weight": 0.0003807575344752952
+        },
+        {
+          "feature": "sku_OIL-5L",
+          "weight": 0.00012183242808975208
+        }
+      ],
+      "holdout": {
+        "rocAuc": 0.9102112522082874,
+        "prAuc": 0.8561307567066438,
+        "accuracy": 0.812,
+        "precision": 0.6903669724770642,
+        "recall": 0.8502824858757062,
+        "f1": 0.7620253164556962,
+        "confusionMatrix": [
+          [
+            1022,
+            270
+          ],
+          [
+            106,
+            602
+          ]
+        ],
+        "brierScore": 0.11625912965644072,
+        "calibration": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "count": 742,
+            "meanProbability": 0.02604264309671211,
+            "observedPositiveRate": 0.025606469002695417
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "count": 217,
+            "meanProbability": 0.15064960275487937,
+            "observedPositiveRate": 0.1889400921658986
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "count": 153,
+            "meanProbability": 0.24637716256849715,
+            "observedPositiveRate": 0.24183006535947713
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "count": 158,
+            "meanProbability": 0.349590890749939,
+            "observedPositiveRate": 0.4240506329113924
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "count": 128,
+            "meanProbability": 0.4489958367055229,
+            "observedPositiveRate": 0.5
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "count": 105,
+            "meanProbability": 0.5450367841469905,
+            "observedPositiveRate": 0.5428571428571428
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "count": 82,
+            "meanProbability": 0.647679258366772,
+            "observedPositiveRate": 0.6951219512195121
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "count": 82,
+            "meanProbability": 0.7497472398897909,
+            "observedPositiveRate": 0.7317073170731707
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "count": 97,
+            "meanProbability": 0.85350006054366,
+            "observedPositiveRate": 0.8247422680412371
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "count": 236,
+            "meanProbability": 0.9677651469283718,
+            "observedPositiveRate": 0.9576271186440678
+          }
+        ],
+        "expectedCalibrationError": 0.019201036392143326,
+        "n": 2000
+      }
+    },
+    "randomForest": {
+      "selectedParameters": {
+        "maxDepth": 14,
+        "minLeaf": 5
+      },
+      "validationTrials": [
+        {
+          "parameters": {
+            "maxDepth": 6,
+            "minLeaf": 12
+          },
+          "validationRocAuc": 0.8957420066660012
+        },
+        {
+          "parameters": {
+            "maxDepth": 10,
+            "minLeaf": 8
+          },
+          "validationRocAuc": 0.9053094404309759
+        },
+        {
+          "parameters": {
+            "maxDepth": 14,
+            "minLeaf": 5
+          },
+          "validationRocAuc": 0.90752486041209
+        }
+      ],
+      "classificationThreshold": 0.34736321968393746,
+      "validation": {
+        "rocAuc": 0.90752486041209,
+        "prAuc": 0.8472026226243287,
+        "accuracy": 0.825,
+        "precision": 0.7165644171779141,
+        "recall": 0.8307254623044097,
+        "f1": 0.769433465085639,
+        "confusionMatrix": [
+          [
+            1066,
+            231
+          ],
+          [
+            119,
+            584
+          ]
+        ],
+        "brierScore": 0.11886302614936278,
+        "calibration": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "count": 667,
+            "meanProbability": 0.03352414294593692,
+            "observedPositiveRate": 0.013493253373313344
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "count": 225,
+            "meanProbability": 0.1467892255006341,
+            "observedPositiveRate": 0.16444444444444445
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "count": 219,
+            "meanProbability": 0.24641587041482657,
+            "observedPositiveRate": 0.2374429223744292
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "count": 153,
+            "meanProbability": 0.34815980657293794,
+            "observedPositiveRate": 0.38562091503267976
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "count": 138,
+            "meanProbability": 0.4477594284632725,
+            "observedPositiveRate": 0.572463768115942
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "count": 138,
+            "meanProbability": 0.5518055000357207,
+            "observedPositiveRate": 0.5144927536231884
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "count": 130,
+            "meanProbability": 0.6563357127693599,
+            "observedPositiveRate": 0.7615384615384615
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "count": 109,
+            "meanProbability": 0.7492658584694267,
+            "observedPositiveRate": 0.7798165137614679
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "count": 102,
+            "meanProbability": 0.854156170397891,
+            "observedPositiveRate": 0.9215686274509803
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "count": 119,
+            "meanProbability": 0.9531995637625241,
+            "observedPositiveRate": 0.9915966386554622
+          }
+        ],
+        "expectedCalibrationError": 0.037919855998986535,
+        "n": 2000
+      },
+      "featureImportance": [
+        {
+          "feature": "joinVelocity",
+          "weight": 0.25696253470463926
+        },
+        {
+          "feature": "remainingHours",
+          "weight": 0.14067515971500869
+        },
+        {
+          "feature": "fillRatio",
+          "weight": 0.09593081547308994
+        },
+        {
+          "feature": "lifecycleFraction",
+          "weight": 0.08410259920638116
+        },
+        {
+          "feature": "currentQuantity",
+          "weight": 0.06417164074012809
+        },
+        {
+          "feature": "elapsedHours",
+          "weight": 0.055792452970186146
+        },
+        {
+          "feature": "participantCount",
+          "weight": 0.05115093741598149
+        },
+        {
+          "feature": "recentJoinVelocity",
+          "weight": 0.04420504819322432
+        },
+        {
+          "feature": "hourOfDay",
+          "weight": 0.03206923907607581
+        },
+        {
+          "feature": "averagePledge",
+          "weight": 0.024843499259802778
+        },
+        {
+          "feature": "sectorDensity",
+          "weight": 0.023824087394408396
+        },
+        {
+          "feature": "weekday",
+          "weight": 0.015376825509633736
+        },
+        {
+          "feature": "competingActivePools",
+          "weight": 0.014603850557513853
+        },
+        {
+          "feature": "sku_RICE-5KG",
+          "weight": 0.01318695343791734
+        },
+        {
+          "feature": "productDemand",
+          "weight": 0.012032115250535167
+        },
+        {
+          "feature": "targetMoq",
+          "weight": 0.009990708747208265
+        },
+        {
+          "feature": "currentRadiusKm",
+          "weight": 0.009090308470479916
+        },
+        {
+          "feature": "radiusExpansionsCount",
+          "weight": 0.008671143605289429
+        },
+        {
+          "feature": "sector_BLUE_AREA",
+          "weight": 0.005094538650174143
+        },
+        {
+          "feature": "evening",
+          "weight": 0.004667603441379404
+        },
+        {
+          "feature": "sector_G-9",
+          "weight": 0.004113094519910459
+        },
+        {
+          "feature": "weekend",
+          "weight": 0.003683833275518808
+        },
+        {
+          "feature": "sku_ATTA-10KG",
+          "weight": 0.003427013133223262
+        },
+        {
+          "feature": "sku_TEA-900G",
+          "weight": 0.0027539369614704174
+        },
+        {
+          "feature": "sku_OIL-5L",
+          "weight": 0.002671323220111668
+        },
+        {
+          "feature": "sector_E-11",
+          "weight": 0.0025607054291283526
+        },
+        {
+          "feature": "sector_G-10",
+          "weight": 0.0025044045695671786
+        },
+        {
+          "feature": "sku_DAAL-5KG",
+          "weight": 0.0024630911640008695
+        },
+        {
+          "feature": "sector_G-11",
+          "weight": 0.002124773207571266
+        },
+        {
+          "feature": "sector_I-8",
+          "weight": 0.0019090274480467158
+        },
+        {
+          "feature": "sku_GHEE-5KG",
+          "weight": 0.001646018097909262
+        },
+        {
+          "feature": "sector_F-10",
+          "weight": 0.001567833303309633
+        },
+        {
+          "feature": "sector_F-8",
+          "weight": 0.0011012120090007254
+        },
+        {
+          "feature": "sector_F-7",
+          "weight": 0.0010316718421741276
+        }
+      ],
+      "holdout": {
+        "rocAuc": 0.9082281663780589,
+        "prAuc": 0.8547412531752054,
+        "accuracy": 0.811,
+        "precision": 0.6941176470588235,
+        "recall": 0.8333333333333334,
+        "f1": 0.7573812580231065,
+        "confusionMatrix": [
+          [
+            1032,
+            260
+          ],
+          [
+            118,
+            590
+          ]
+        ],
+        "brierScore": 0.11788383594846083,
+        "calibration": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "count": 622,
+            "meanProbability": 0.03368837107903025,
+            "observedPositiveRate": 0.014469453376205787
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "count": 260,
+            "meanProbability": 0.14625976518809014,
+            "observedPositiveRate": 0.12692307692307692
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "count": 186,
+            "meanProbability": 0.24582182925476537,
+            "observedPositiveRate": 0.27956989247311825
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "count": 178,
+            "meanProbability": 0.35051535811538204,
+            "observedPositiveRate": 0.3202247191011236
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "count": 183,
+            "meanProbability": 0.4465967694746478,
+            "observedPositiveRate": 0.5245901639344263
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "count": 117,
+            "meanProbability": 0.548089585524454,
+            "observedPositiveRate": 0.5897435897435898
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "count": 94,
+            "meanProbability": 0.6447949399847172,
+            "observedPositiveRate": 0.6276595744680851
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "count": 108,
+            "meanProbability": 0.7471308042674495,
+            "observedPositiveRate": 0.8425925925925926
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "count": 121,
+            "meanProbability": 0.8473905196527843,
+            "observedPositiveRate": 0.9338842975206612
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "count": 131,
+            "meanProbability": 0.9497111268572903,
+            "observedPositiveRate": 0.9847328244274809
+          }
+        ],
+        "expectedCalibrationError": 0.037385537972188576,
+        "n": 2000
+      }
+    },
+    "xgboost": {
+      "selectedParameters": {
+        "maxDepth": 4,
+        "nEstimators": 120,
+        "learningRate": 0.05
+      },
+      "validationTrials": [
+        {
+          "parameters": {
+            "maxDepth": 2,
+            "nEstimators": 180,
+            "learningRate": 0.06
+          },
+          "validationRocAuc": 0.907698694108628
+        },
+        {
+          "parameters": {
+            "maxDepth": 3,
+            "nEstimators": 150,
+            "learningRate": 0.055
+          },
+          "validationRocAuc": 0.913174181363931
+        },
+        {
+          "parameters": {
+            "maxDepth": 4,
+            "nEstimators": 120,
+            "learningRate": 0.05
+          },
+          "validationRocAuc": 0.9142522793052356
+        }
+      ],
+      "classificationThreshold": 0.39949244260787964,
+      "validation": {
+        "rocAuc": 0.9142522793052356,
+        "prAuc": 0.8594140647387196,
+        "accuracy": 0.8415,
+        "precision": 0.7741477272727273,
+        "recall": 0.7752489331436699,
+        "f1": 0.7746979388770433,
+        "confusionMatrix": [
+          [
+            1138,
+            159
+          ],
+          [
+            158,
+            545
+          ]
+        ],
+        "brierScore": 0.11373448767390958,
+        "calibration": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "count": 689,
+            "meanProbability": 0.03491588681936264,
+            "observedPositiveRate": 0.015965166908563134
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "count": 266,
+            "meanProbability": 0.14804625511169434,
+            "observedPositiveRate": 0.15037593984962405
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "count": 189,
+            "meanProbability": 0.24816426634788513,
+            "observedPositiveRate": 0.2962962962962963
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "count": 154,
+            "meanProbability": 0.3477901220321655,
+            "observedPositiveRate": 0.34415584415584416
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "count": 103,
+            "meanProbability": 0.45042097568511963,
+            "observedPositiveRate": 0.5339805825242718
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "count": 99,
+            "meanProbability": 0.5479637384414673,
+            "observedPositiveRate": 0.6262626262626263
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "count": 122,
+            "meanProbability": 0.651862621307373,
+            "observedPositiveRate": 0.6967213114754098
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "count": 109,
+            "meanProbability": 0.75130695104599,
+            "observedPositiveRate": 0.8256880733944955
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "count": 108,
+            "meanProbability": 0.8512932062149048,
+            "observedPositiveRate": 0.8518518518518519
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "count": 161,
+            "meanProbability": 0.9510596394538879,
+            "observedPositiveRate": 0.9875776397515528
+          }
+        ],
+        "expectedCalibrationError": 0.029605819161981344,
+        "n": 2000
+      },
+      "featureImportance": [
+        {
+          "feature": "joinVelocity",
+          "weight": 0.25437042117118835
+        },
+        {
+          "feature": "remainingHours",
+          "weight": 0.08023492246866226
+        },
+        {
+          "feature": "fillRatio",
+          "weight": 0.0736272782087326
+        },
+        {
+          "feature": "lifecycleFraction",
+          "weight": 0.0643637627363205
+        },
+        {
+          "feature": "sku_RICE-5KG",
+          "weight": 0.043525006622076035
+        },
+        {
+          "feature": "elapsedHours",
+          "weight": 0.033486027270555496
+        },
+        {
+          "feature": "currentQuantity",
+          "weight": 0.03106016479432583
+        },
+        {
+          "feature": "sectorDensity",
+          "weight": 0.030728675425052643
+        },
+        {
+          "feature": "participantCount",
+          "weight": 0.030631238594651222
+        },
+        {
+          "feature": "sector_BLUE_AREA",
+          "weight": 0.029849503189325333
+        },
+        {
+          "feature": "recentJoinVelocity",
+          "weight": 0.029063494876027107
+        },
+        {
+          "feature": "hourOfDay",
+          "weight": 0.026163170114159584
+        },
+        {
+          "feature": "sector_G-9",
+          "weight": 0.022834233939647675
+        },
+        {
+          "feature": "targetMoq",
+          "weight": 0.022258561104536057
+        },
+        {
+          "feature": "competingActivePools",
+          "weight": 0.02184435725212097
+        },
+        {
+          "feature": "weekend",
+          "weight": 0.019635654985904694
+        },
+        {
+          "feature": "sku_TEA-900G",
+          "weight": 0.019435390830039978
+        },
+        {
+          "feature": "sector_I-8",
+          "weight": 0.018236223608255386
+        },
+        {
+          "feature": "averagePledge",
+          "weight": 0.017783725634217262
+        },
+        {
+          "feature": "weekday",
+          "weight": 0.015358734875917435
+        },
+        {
+          "feature": "currentRadiusKm",
+          "weight": 0.015295062214136124
+        },
+        {
+          "feature": "evening",
+          "weight": 0.014809305779635906
+        },
+        {
+          "feature": "sector_F-10",
+          "weight": 0.01324923150241375
+        },
+        {
+          "feature": "sector_F-7",
+          "weight": 0.011583208106458187
+        },
+        {
+          "feature": "radiusExpansionsCount",
+          "weight": 0.01131059043109417
+        },
+        {
+          "feature": "sku_OIL-5L",
+          "weight": 0.011116625741124153
+        },
+        {
+          "feature": "productDemand",
+          "weight": 0.009083406999707222
+        },
+        {
+          "feature": "sku_DAAL-5KG",
+          "weight": 0.0075600300915539265
+        },
+        {
+          "feature": "sector_E-11",
+          "weight": 0.007074195425957441
+        },
+        {
+          "feature": "sector_F-8",
+          "weight": 0.005746838171035051
+        },
+        {
+          "feature": "sector_G-10",
+          "weight": 0.0043533071875572205
+        },
+        {
+          "feature": "sector_G-11",
+          "weight": 0.004327666945755482
+        },
+        {
+          "feature": "sku_ATTA-10KG",
+          "weight": 0.0
+        },
+        {
+          "feature": "sku_GHEE-5KG",
+          "weight": 0.0
+        }
+      ],
+      "holdout": {
+        "rocAuc": 0.9122960067166921,
+        "prAuc": 0.8601688621175386,
+        "accuracy": 0.8325,
+        "precision": 0.7565337001375516,
+        "recall": 0.7768361581920904,
+        "f1": 0.7665505226480837,
+        "confusionMatrix": [
+          [
+            1115,
+            177
+          ],
+          [
+            158,
+            550
+          ]
+        ],
+        "brierScore": 0.11511817840184696,
+        "calibration": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "count": 678,
+            "meanProbability": 0.036173008382320404,
+            "observedPositiveRate": 0.016224188790560472
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "count": 246,
+            "meanProbability": 0.14776407182216644,
+            "observedPositiveRate": 0.15853658536585366
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "count": 183,
+            "meanProbability": 0.250102698802948,
+            "observedPositiveRate": 0.2677595628415301
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "count": 166,
+            "meanProbability": 0.34564489126205444,
+            "observedPositiveRate": 0.35542168674698793
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "count": 131,
+            "meanProbability": 0.44463056325912476,
+            "observedPositiveRate": 0.5572519083969466
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "count": 114,
+            "meanProbability": 0.5473987460136414,
+            "observedPositiveRate": 0.5701754385964912
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "count": 100,
+            "meanProbability": 0.6526435613632202,
+            "observedPositiveRate": 0.62
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "count": 86,
+            "meanProbability": 0.7458287477493286,
+            "observedPositiveRate": 0.7674418604651163
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "count": 108,
+            "meanProbability": 0.8534624576568604,
+            "observedPositiveRate": 0.9259259259259259
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "count": 188,
+            "meanProbability": 0.9488184452056885,
+            "observedPositiveRate": 0.9787234042553191
+          }
+        ],
+        "expectedCalibrationError": 0.028475351028144358,
+        "n": 2000
+      }
+    }
+  },
+  "featureImportance": [
+    {
+      "feature": "joinVelocity",
+      "weight": 0.25437042117118835
+    },
+    {
+      "feature": "remainingHours",
+      "weight": 0.08023492246866226
+    },
+    {
+      "feature": "fillRatio",
+      "weight": 0.0736272782087326
+    },
+    {
+      "feature": "lifecycleFraction",
+      "weight": 0.0643637627363205
+    },
+    {
+      "feature": "sku_RICE-5KG",
+      "weight": 0.043525006622076035
+    },
+    {
+      "feature": "elapsedHours",
+      "weight": 0.033486027270555496
+    },
+    {
+      "feature": "currentQuantity",
+      "weight": 0.03106016479432583
+    },
+    {
+      "feature": "sectorDensity",
+      "weight": 0.030728675425052643
+    },
+    {
+      "feature": "participantCount",
+      "weight": 0.030631238594651222
+    },
+    {
+      "feature": "sector_BLUE_AREA",
+      "weight": 0.029849503189325333
+    },
+    {
+      "feature": "recentJoinVelocity",
+      "weight": 0.029063494876027107
+    },
+    {
+      "feature": "hourOfDay",
+      "weight": 0.026163170114159584
+    },
+    {
+      "feature": "sector_G-9",
+      "weight": 0.022834233939647675
+    },
+    {
+      "feature": "targetMoq",
+      "weight": 0.022258561104536057
+    },
+    {
+      "feature": "competingActivePools",
+      "weight": 0.02184435725212097
+    },
+    {
+      "feature": "weekend",
+      "weight": 0.019635654985904694
+    },
+    {
+      "feature": "sku_TEA-900G",
+      "weight": 0.019435390830039978
+    },
+    {
+      "feature": "sector_I-8",
+      "weight": 0.018236223608255386
+    },
+    {
+      "feature": "averagePledge",
+      "weight": 0.017783725634217262
+    },
+    {
+      "feature": "weekday",
+      "weight": 0.015358734875917435
+    },
+    {
+      "feature": "currentRadiusKm",
+      "weight": 0.015295062214136124
+    },
+    {
+      "feature": "evening",
+      "weight": 0.014809305779635906
+    },
+    {
+      "feature": "sector_F-10",
+      "weight": 0.01324923150241375
+    },
+    {
+      "feature": "sector_F-7",
+      "weight": 0.011583208106458187
+    },
+    {
+      "feature": "radiusExpansionsCount",
+      "weight": 0.01131059043109417
+    },
+    {
+      "feature": "sku_OIL-5L",
+      "weight": 0.011116625741124153
+    },
+    {
+      "feature": "productDemand",
+      "weight": 0.009083406999707222
+    },
+    {
+      "feature": "sku_DAAL-5KG",
+      "weight": 0.0075600300915539265
+    },
+    {
+      "feature": "sector_E-11",
+      "weight": 0.007074195425957441
+    },
+    {
+      "feature": "sector_F-8",
+      "weight": 0.005746838171035051
+    },
+    {
+      "feature": "sector_G-10",
+      "weight": 0.0043533071875572205
+    },
+    {
+      "feature": "sector_G-11",
+      "weight": 0.004327666945755482
+    },
+    {
+      "feature": "sku_ATTA-10KG",
+      "weight": 0.0
+    },
+    {
+      "feature": "sku_GHEE-5KG",
+      "weight": 0.0
+    }
+  ],
+  "artifactSha256": {
+    "logistic.joblib": "0bff8bb9a8a4d20d7fa2363dd680acffb7abd90d47e202b84a727ed28f3f0615",
+    "randomForest.joblib": "cecd3d3fda411a77e5ab57731cc93c1e8f73d98d34002e84cfcae6c0c4e3de53",
+    "xgboost.ubj": "88f7eaab7b0407c7ba6657baa1b89247fc41fe09fac397977cb9e4596cff2dc6"
+  },
+  "datasetSha256": {
+    "synthetic/pool_lifecycle_14000.csv": "c8943438dc27421642596a6f878f74d51c6efda901ef006f873d56c51bcc5dc6",
+    "synthetic/pool_lifecycle_14000.parquet": "b410b8de5f0f93eb7252977dcc1e642156b3c8a499008d43d16c2a9bcc158ea0",
+    "processed/train.csv": "6fa45acbbe91831199b12e97eb7f0e44c45bc573452a653e86b9bb53cc6d039b",
+    "processed/validation.csv": "34f1b2e3863c9ea7bff862e0509a26401e7edbada206b182ee033cfc8f6199fe",
+    "processed/test.csv": "7618d969e9e1d04545e98a5e70a7a96b0f87d3873f9cca15a8ebad438f79d587"
+  },
+  "packages": {
+    "xgboost": "3.1.3",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "23.0.1",
+    "joblib": "1.6.0"
+  },
+  "featureContractSha256": "79c5382b675ffda5abf6c4e7fcf3ed1e6606b55fe4f1396cbf577066fe13caba"
+}

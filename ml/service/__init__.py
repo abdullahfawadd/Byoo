@@ -1,0 +1,1 @@
+"""Byoo pooling inference service."""

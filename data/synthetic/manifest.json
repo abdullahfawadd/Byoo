@@ -1,0 +1,40 @@
+{
+  "datasetVersion": "isb-pools-synthetic-v1",
+  "seed": 42,
+  "rows": 14000,
+  "missingValues": 0,
+  "uniquePools": 14000,
+  "splits": {
+    "train": {
+      "rows": 10000,
+      "positive": 3425,
+      "negative": 6575,
+      "firstObservation": "2024-01-08T00:00:15+05:00",
+      "lastObservation": "2024-08-04T23:47:41+05:00",
+      "lastOutcome": "2024-08-07T21:03:16+05:00"
+    },
+    "validation": {
+      "rows": 2000,
+      "positive": 703,
+      "negative": 1297,
+      "firstObservation": "2024-08-12T00:49:40+05:00",
+      "lastObservation": "2024-09-22T23:59:34+05:00",
+      "lastOutcome": "2024-09-25T06:43:04+05:00"
+    },
+    "test": {
+      "rows": 2000,
+      "positive": 708,
+      "negative": 1292,
+      "firstObservation": "2024-10-01T00:06:56+05:00",
+      "lastObservation": "2024-11-11T23:52:50+05:00",
+      "lastOutcome": "2024-11-14T13:59:56+05:00"
+    }
+  },
+  "sha256": {
+    "synthetic/pool_lifecycle_14000.csv": "c8943438dc27421642596a6f878f74d51c6efda901ef006f873d56c51bcc5dc6",
+    "synthetic/pool_lifecycle_14000.parquet": "b410b8de5f0f93eb7252977dcc1e642156b3c8a499008d43d16c2a9bcc158ea0",
+    "processed/train.csv": "6fa45acbbe91831199b12e97eb7f0e44c45bc573452a653e86b9bb53cc6d039b",
+    "processed/validation.csv": "34f1b2e3863c9ea7bff862e0509a26401e7edbada206b182ee033cfc8f6199fe",
+    "processed/test.csv": "7618d969e9e1d04545e98a5e70a7a96b0f87d3873f9cca15a8ebad438f79d587"
+  }
+}
